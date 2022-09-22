@@ -4,5 +4,5 @@ from Empresas.views import EmpreListView
 #secrea el archivo urls para trabajabar  contrlar de una marnera mas comoda y ordenada las rutas
 
 urlpatterns = [
-    path('empresas', EmpreListView.as_view(), name='Lista Empresas'),
+    path('empresa', EmpreListView.as_view(), name='Lista Empresas'),
 ]

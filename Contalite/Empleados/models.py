@@ -1,5 +1,7 @@
+from tabnanny import verbose
 from django.db import models
 from Empresas.models import Empresa
+from .choices import roles
 
 #creamos los modelos de las tablas que vamos a usar
 
@@ -14,8 +16,26 @@ class Empleado (models.Model):
     empresa=models.ForeignKey(Empresa, related_name='Empresa', on_delete=models.CASCADE)
     fecha_creacion=models.DateField(auto_now=True)
     image = models.ImageField(null=True, blank=True)
-    admin=models.BooleanField("Rol", null=True)
+    rol=models.CharField("Rol", max_length=20, choices=roles, default= 'Administrador')
 
+    class Meta:
+        verbose_name='Empleados'
+        verbose_name_plural='Empleados'
+        db_table='Empleados'
+        ordering=['ape_emp','nom_emp']
+
+        #muestra los datos de cada empleado
+    def nombreCompleto(self):
+        return "{} {}, Id: {} ".format(self.ape_emp, self.nom_emp, self.id_empleado)
     def __str__(self):
-        return "%s id_empleado:" % self.id_empleado
+        return self.nombreCompleto()
+    #con el meta podremos trabajar los metadatos de cada modelo
+
+"""    def __str__(self):
+        return "%s id_empleado:" % self.id_empleado"""
+
+
+    
+    
+    
 

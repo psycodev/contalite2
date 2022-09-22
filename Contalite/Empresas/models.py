@@ -11,6 +11,19 @@ class Empresa(models.Model):
     ciudad=models.CharField("Ciudad",null=False,max_length=100)
     telefono=models.CharField("Telefono",null=False,max_length=100)
 
-    def __str__(self):
-        return "%s nit:" % self.nit
+    class Meta:
+        verbose_name='Empresas'
+        verbose_name_plural='Empresas'
+        db_table='Empresas'
+        ordering=['nom_emp']
 
+        #muestra los datos de cada empleado
+    def nombreCompleto(self):
+        return " {} ".format(self.nom_emp)
+    def __str__(self):
+        return self.nombreCompleto()
+    #con el meta podremos trabajar los metadatos de cada modelo
+
+    """def __str__(self):
+        return "%s nit:" % self.nit
+"""

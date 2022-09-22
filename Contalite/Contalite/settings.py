@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+from tempfile import template
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -40,6 +41,7 @@ INSTALLED_APPS = [
     'Empresas',
     'Transacciones',
     'Empleados',
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -81,8 +83,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'postgres',
         'USER': 'postgres', 
-        'PASSWORD':'nytged-geDki7-bagduj',
-        'HOST': 'db.bhergdjkchwlmnkwkclk.supabase.co', 
+        'PASSWORD':'Bl8MGfYZV7Ouq9qT',
+        'HOST': 'db.uabmqojpvmungdbqnnay.supabase.co', 
         'PORT' : '5432', 
     }
 }

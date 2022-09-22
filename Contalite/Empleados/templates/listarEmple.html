@@ -20,25 +20,38 @@
 
                 </div>
                 <div class="col-md-8">
+                    <h3>Listado de Empleados</h3>
                     <div class="table-responsive">
                     <br>
                         <table class="table table-striped">
                             <thead class="thead-dark">
-                                <tr>
+                               <!-- <tr>
                                     <th scope="col">Empleados</th>
+
+                                </tr> -->
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">id</th>
+                                    <th scope="col">nombre</th>
+                                    <th scope="col">apellido</td>
+                                    <th scope="col">Empl&eacute;ado</td>
+                                    <th scope="col">E-mail</td>
+                                    <th scope="col">Empresa</td>
+
+
                                 </tr>
-                            </thead>    
+                           </thead>    
                             <tbody>
                                 {% for i in object_list %}
                                 <tr>
+                                    <td>{{forloop.counter}}</td>
                                     <td>{{i.id_empleado}}</td>
-                                    <td>{{i.id_user}}</td>
                                     <td>{{i.nom_emp}}</td>
                                     <td>{{i.ape_emp}}</td>
+                                    <td>{{i.nom_usu}}</td>
                                     <td>{{i.email}}</td>
-                                    <td>{{i.telefono}}</td>
                                     <td>{{i.empresa}}</td>
-                                    <td>{{i.fecha_creacion}}</td>
+                                    
                                 </tr>
                                 {% endfor %}
                             </tbody>
